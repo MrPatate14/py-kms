@@ -58,7 +58,7 @@ def start_kms(logger):
       time.sleep(2) # Wait for the server to start up
       pykms_webui_env = os.environ.copy()
       pykms_webui_env['PYKMS_SQLITE_DB_PATH'] = db_path
-      pykms_webui_env['PORT'] = '8080'
+      pykms_webui_env['PORT'] = '8181'
       pykms_webui_env['PYKMS_LICENSE_PATH'] = '/LICENSE'
       pykms_webui_env['PYKMS_VERSION_PATH'] = '/VERSION'
       pykms_webui_process = subprocess.Popen(['gunicorn', '--log-level', os.environ.get('LOGLEVEL'), 'pykms_WebUI:app'], env=pykms_webui_env)
